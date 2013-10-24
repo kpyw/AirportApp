@@ -1,3 +1,6 @@
+require 'airport_api'
+require 'weather_api'
+
 class AirportController < ApplicationController
 
   def status
