@@ -1,1 +1,10 @@
 <h1> These are airports </h1>
+
+<% @airport_list.each do |code| %>
+  <!-- airport = Airport.new -->
+  <h2><%= code %></h2>
+
+  <p>Temperature:</p>
+  <p>Delay</p>
+  <!-- puts html_for_airport(airport) -->
+<% end %>
