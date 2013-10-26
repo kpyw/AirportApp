@@ -1,5 +1,5 @@
-require './airports_api'
-require './weather_api'
+require 'airports_api'
+require 'weather_api'
 
 class Airport
 

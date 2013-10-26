@@ -1,10 +1,25 @@
 <h1> These are airports </h1>
 
 <% @airport_list.each do |code| %>
-  <!-- airport = Airport.new -->
-  <h2><%= code %></h2>
+  <%airport = Airport.new %>
+  <% airport.code = code[:code] %>
 
-  <p>Temperature:</p>
-  <p>Delay</p>
-  <!-- puts html_for_airport(airport) -->
+  <!-- <h2><%= airport.code %></h2> -->
+  <h2><a href="/details?id=<%= code[:id].to_i %>"><%= airport.code %></a></h2>
+
+  <p>Temperature: <%= airport.temperature %></p>
+
+  <%
+  if airport.delay < 15
+    new_delay = 'on-time'
+  elsif airport.delay < 30
+   new_delay  = 'delayed'
+  else
+    new_delay = 'nightmare'
+  end %>
+
+<p>Delay: <%=new_delay%></p>
+
+
+
 <% end %>
